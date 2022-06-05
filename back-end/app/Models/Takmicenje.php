@@ -17,7 +17,7 @@ class Takmicenje extends Model
 
     public function timovi()
     {
-        return $this->belongsToMany(Tim::class);
+        return $this->belongsToMany(Tim::class, 'tim_takmicenje');
     }
 
     public function bodovi()

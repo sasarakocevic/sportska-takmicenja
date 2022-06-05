@@ -23,7 +23,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('tim', TimController::class);
+
+Route::get('takmicenje/{id}/timovi', [TakmicenjeController::class, 'timovi']);
+Route::post('takmicenje/{takmicenje_id}/timovi/{tim_id}', [TakmicenjeController::class, 'addTimovi']);
+Route::delete('takmicenje/{takmicenje_id}/timovi/{tim_id}', [TakmicenjeController::class, 'removeTimovi']);
+
 Route::resource('takmicenje', TakmicenjeController::class);
+
 
 Route::get('utakmica', [UtakmicaController::class, 'index']);
 Route::get('utakmica/{id}', [UtakmicaController::class, 'show']);

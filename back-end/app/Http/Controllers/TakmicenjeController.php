@@ -72,4 +72,23 @@ class TakmicenjeController extends Controller
         $takmicenje->delete($id);
         return'{"success":"Uspjesno ste obrisali takmicenje."}';
     }
+
+    public function timovi($id)
+    {
+        $data = Takmicenje::with('timovi')->get(); //Model get all
+        return $data;
+    }
+
+    public function addTimovi($takmicenje_id, $tim_id)
+    {
+        $takmicenje = Takmicenje::find($takmicenje_id);
+        $takmicenje->timovi()->attach($tim_id);
+        return Takmicenje::with('timovi')->get();
+    }
+    public function removeTimovi($takmicenje_id, $tim_id)
+    {
+        $takmicenje = Takmicenje::find($takmicenje_id);
+        $takmicenje->timovi()->detach($tim_id);
+        return Takmicenje::with('timovi')->get();
+    }
 }
