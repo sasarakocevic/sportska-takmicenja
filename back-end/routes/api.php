@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TimController;
+use App\Http\Controllers\TakmicenjeController;
+use App\Http\Controllers\UtakmicaController;
+use App\Http\Controllers\BodoviController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +23,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('tim', TimController::class);
+Route::resource('takmicenje', TakmicenjeController::class);
+
+Route::get('utakmica', [UtakmicaController::class, 'index']);
+Route::get('utakmica/{id}', [UtakmicaController::class, 'show']);
+Route::post('utakmica', [UtakmicaController::class, 'store']);
+Route::put('utakmica/{id}', [UtakmicaController::class, 'update']);
+Route::delete('utakmica/{id}', [UtakmicaController::class, 'destroy']);
+
+Route::get('bodovi', [BodoviController::class, 'index']);
+Route::get('bodovi/{timId}/{takmicenjeId}', [BodoviController::class, 'show']);
+//Route::resource('tim.bodovi', BodoviController::class);

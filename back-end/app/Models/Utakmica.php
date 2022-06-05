@@ -16,14 +16,17 @@ class Utakmica extends Model
     ];
 
     public function tim1() {
-        return $this->hasMany(Tim::class, 'id', 'tim1_id');
+    //    return $this->belongsTo(Tim::class, 'tim1_id', 'id');
+        return $this->belongsTo(Tim::class, 'tim1_id');
     }
 
     public function tim2() {
-        return $this->hasMany(Tim::class, 'id', 'tim2_id');
+    //    return $this->hasMany(Tim::class, 'tim2_id', 'id');
+        return $this->belongsTo(Tim::class, 'tim2_id');
     }
 
     public function takmicenje() {
-        return $this->hasMany(Takmicenje::class, 'id', 'takmicenje_id');
+    //    return $this->hasMany(Takmicenje::class, 'takmicenje_id', 'id');
+        return $this->belongsTo(Takmicenje::class, 'takmicenje_id');
     }
 }

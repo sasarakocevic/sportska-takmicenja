@@ -15,4 +15,14 @@ class TakmicenjeTim extends Pivot
     protected $fillable = [
         'tim_id', 'broj_bodova', 'takmicenje_id'
     ];
+
+
+    public function tim() {
+        //    return $this->belongsTo(Tim::class, 'tim1_id', 'id');
+            return $this->belongsTo(Tim::class, 'tim_id');
+    }
+    public function takmicenje() {
+        //    return $this->belongsTo(Tim::class, 'tim1_id', 'id');
+            return $this->belongsTo(Takmicenje::class, 'takmicenje_id');
+    }
 }
