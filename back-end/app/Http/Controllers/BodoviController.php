@@ -10,16 +10,29 @@ class BodoviController extends Controller
 {
     public function index() 
     {
+        $bodovi = \DB::select(\DB::raw(
+            "SELECT t.naziv as tim, tak.naziv as takmicenje, SUM(broj_bodova) as bodovi 
+            FROM bodovi_tim bd JOIN tim t ON bd.tim_id=t.id JOIN takmicenje tak on bd.takmicenje_id=tak.id 
+            GROUP BY tim"
+        ));
         $data = TakmicenjeTim::with('tim', 'takmicenje')->get(); //Model get all
-        return $data;
+        return $bodovi;
     }
 
     public function show($timId, $takmicenjeId)
     {
-        $data = TakmicenjeTim::where('tim_id', '=', $timId)
+        $bodovi = \DB::select(\DB::raw(
+            "SELECT t.naziv as tim, tak.naziv as takmicenje, SUM(broj_bodova) as bodovi 
+            FROM bodovi_tim bd JOIN tim t ON bd.tim_id=t.id JOIN takmicenje tak on bd.takmicenje_id=tak.id 
+            WHERE t.id=".$timId." AND tak.id=".$takmicenjeId.' GROUP BY tim'
+        ));
+        $data = TakmicenjeTim::with('tim', 'takmicenje')
+                        //    ->select('tim_id', 'takmicenje_id')
+                            ->where('tim_id', '=', $timId)
                             ->where('takmicenje_id', '=', $takmicenjeId)
+                        //    ->orderBy('bodovi');
                             ->sum('broj_bodova');
-        return $data;
+        return $bodovi;
     }
 
 
