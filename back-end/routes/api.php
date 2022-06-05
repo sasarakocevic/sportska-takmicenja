@@ -30,7 +30,6 @@ Route::delete('takmicenje/{takmicenje_id}/timovi/{tim_id}', [TakmicenjeControlle
 
 Route::resource('takmicenje', TakmicenjeController::class);
 
-
 Route::get('utakmica', [UtakmicaController::class, 'index']);
 Route::get('utakmica/{id}', [UtakmicaController::class, 'show']);
 Route::post('utakmica', [UtakmicaController::class, 'store']);
@@ -39,4 +38,7 @@ Route::delete('utakmica/{id}', [UtakmicaController::class, 'destroy']);
 
 Route::get('bodovi', [BodoviController::class, 'index']);
 Route::get('bodovi/{timId}/{takmicenjeId}', [BodoviController::class, 'show']);
+Route::post('bodovi', [BodoviController::class, 'store']);
+Route::put('bodovi/{id}', [BodoviController::class, 'update']);
+Route::delete('bodovi/{id}', [BodoviController::class, 'destroy']);
 //Route::resource('tim.bodovi', BodoviController::class);

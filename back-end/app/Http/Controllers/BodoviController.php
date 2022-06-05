@@ -27,16 +27,11 @@ class BodoviController extends Controller
             WHERE t.id=".$timId." AND tak.id=".$takmicenjeId.' GROUP BY tim'
         ));
         $data = TakmicenjeTim::with('tim', 'takmicenje')
-                        //    ->select('tim_id', 'takmicenje_id')
                             ->where('tim_id', '=', $timId)
                             ->where('takmicenje_id', '=', $takmicenjeId)
-                        //    ->orderBy('bodovi');
                             ->sum('broj_bodova');
         return $bodovi;
     }
-
-
-
 
     public function store(Request $request)
     {
