@@ -9,6 +9,8 @@ class Utakmica extends Model
 {
     public $table = 'utakmica';
 
+    public $timestamps = false;
+
     use HasFactory;
 
     protected $fillable = [
@@ -16,17 +18,14 @@ class Utakmica extends Model
     ];
 
     public function tim1() {
-    //    return $this->belongsTo(Tim::class, 'tim1_id', 'id');
         return $this->belongsTo(Tim::class, 'tim1_id');
     }
 
     public function tim2() {
-    //    return $this->hasMany(Tim::class, 'tim2_id', 'id');
         return $this->belongsTo(Tim::class, 'tim2_id');
     }
 
     public function takmicenje() {
-    //    return $this->hasMany(Takmicenje::class, 'takmicenje_id', 'id');
         return $this->belongsTo(Takmicenje::class, 'takmicenje_id');
     }
 }

@@ -12,6 +12,7 @@ class TakmicenjeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //Listanje svih takmicenja
     public function index()
     {
         $data = Takmicenje::all(); //Model get all
@@ -26,6 +27,7 @@ class TakmicenjeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    //dodavanje novog takmicenja
     public function store(Request $request)
     {
         $data = Takmicenje::create($request->all());
@@ -38,6 +40,7 @@ class TakmicenjeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //prikaz jednog takmicenja
     public function show($id)
     {
         $data = Takmicenje::findOrFail($id);
@@ -53,6 +56,7 @@ class TakmicenjeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //edit jednog takmicenja
     public function update(Request $request, $id)
     {
         $takmicenje = Takmicenje::find($id);
@@ -66,6 +70,7 @@ class TakmicenjeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //uklanjanje takmicenja
     public function destroy($id)
     {
         $takmicenje = Takmicenje::findOrFail($id);
@@ -73,18 +78,22 @@ class TakmicenjeController extends Controller
         return'{"success":"Uspjesno ste obrisali takmicenje."}';
     }
 
+    //listanje timova koji igraju takmicenje
     public function timovi($id)
     {
-        $data = Takmicenje::with('timovi')->get(); //Model get all
+        $data = Takmicenje::with('timovi')->findOrFail($id); //Model get all
         return $data;
     }
 
+    //dodavanje tima takmicenju
     public function addTimovi($takmicenje_id, $tim_id)
     {
         $takmicenje = Takmicenje::find($takmicenje_id);
         $takmicenje->timovi()->attach($tim_id);
         return Takmicenje::with('timovi')->get();
     }
+
+    //uklanjanje tima iz takmicenja
     public function removeTimovi($takmicenje_id, $tim_id)
     {
         $takmicenje = Takmicenje::find($takmicenje_id);

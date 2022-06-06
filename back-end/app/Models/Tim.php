@@ -9,6 +9,8 @@ class Tim extends Model
 {
     public $table = 'tim';
 
+    public $timestamps = false;
+
     use HasFactory;
 
     protected $fillable = [

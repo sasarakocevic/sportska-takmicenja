@@ -7,18 +7,21 @@ use App\Models\Utakmica;
 
 class UtakmicaController extends Controller
 {
+    //prikaz svih utakmica iz baze
     public function index() 
     {
         $data = Utakmica::with('tim1','tim2', 'takmicenje')->get(); //Model get all
         return $data;
     }
 
+    //dodavanje nove utakmice
     public function store(Request $request)
     {
         $data = Utakmica::create($request->all());
         return $data;
     }
 
+    //prikaz 1 utakmice
     public function show($id)
     {
     //    $data = Utakmica::findOrFail($id);
@@ -26,6 +29,7 @@ class UtakmicaController extends Controller
         return $data1;
     }
 
+    //update utakmice
     public function update(Request $request, $id)
     {
         $utakmica = Utakmica::find($id);
@@ -33,6 +37,7 @@ class UtakmicaController extends Controller
         return $utakmica;
     }
 
+    //uklanjanje utakmice
     public function destroy($id)
     {
         $utakmica = Utakmica::findOrFail($id);

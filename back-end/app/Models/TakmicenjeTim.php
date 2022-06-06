@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 class TakmicenjeTim extends Pivot
 {
     public $table = 'bodovi_tim';
+
+    public $timestamps = false;
     
     use HasFactory;
 
@@ -18,11 +20,9 @@ class TakmicenjeTim extends Pivot
 
 
     public function tim() {
-        //    return $this->belongsTo(Tim::class, 'tim1_id', 'id');
             return $this->belongsTo(Tim::class, 'tim_id');
     }
     public function takmicenje() {
-        //    return $this->belongsTo(Tim::class, 'tim1_id', 'id');
             return $this->belongsTo(Takmicenje::class, 'takmicenje_id');
     }
 }
