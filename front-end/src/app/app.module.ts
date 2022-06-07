@@ -18,6 +18,7 @@ import { TakmicenjeItemComponent } from './komponente/takmicenje-item/takmicenje
 import { GeneracijaUtakmicaComponent } from './komponente/generacija-utakmica/generacija-utakmica.component';
 import { DodavanjeTimovaUTakmicenjeComponent } from './komponente/dodavanje-timova-utakmicenje/dodavanje-timova-utakmicenje.component';
 import { UtakmiceComponent } from './komponente/utakmice/utakmice.component';
+import { TimItemComponent } from './komponente/tim-item/tim-item.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UtakmiceComponent } from './komponente/utakmice/utakmice.component';
     TakmicenjeItemComponent,
     GeneracijaUtakmicaComponent,
     DodavanjeTimovaUTakmicenjeComponent,
-    UtakmiceComponent
+    UtakmiceComponent,
+    TimItemComponent
   ],
   imports: [
     BrowserModule,
