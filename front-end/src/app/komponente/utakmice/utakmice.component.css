@@ -1,0 +1,28 @@
+.container {
+    margin-top: 10px;
+}
+
+.mat-row:hover {
+    background: whitesmoke;
+}
+
+.mat-header-cell {
+    color: black;
+    text-transform: uppercase;
+    font-size: larger;
+    font-style: bold;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td,
+th {
+    width: 25%;
+}

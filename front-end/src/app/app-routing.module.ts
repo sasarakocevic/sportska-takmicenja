@@ -7,6 +7,7 @@ import { TimAddComponent } from './komponente/tim-add/tim-add.component';
 import { TimoviComponent } from './komponente/timovi/timovi.component';
 import { GeneracijaUtakmicaComponent } from './komponente/generacija-utakmica/generacija-utakmica.component';
 import { TakmicenjeItemComponent } from './komponente/takmicenje-item/takmicenje-item.component';
+import { UtakmiceComponent } from './komponente/utakmice/utakmice.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'takmicenja', component: TakmicenjaComponent },
   { path: 'takmicenjeAdd', component: TakmicenjeAddComponent },
   { path: 'grupe', component: GeneracijaUtakmicaComponent },
-  { path: 'takmicenjeItem/:id', component: TakmicenjeItemComponent }
+  { path: 'takmicenjeItem/:id', component: TakmicenjeItemComponent },
+  { path: 'utakmice', component: UtakmiceComponent },
 ];
 
 @NgModule({

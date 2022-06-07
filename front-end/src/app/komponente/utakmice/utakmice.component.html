@@ -1,0 +1,62 @@
+<mat-spinner *ngIf="!isLoading"></mat-spinner>
+
+<div class="container" *ngIf="utakmice && isLoading">
+    <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. liga sampiona" #input>
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="tim1">
+            <th mat-header-cell *matHeaderCellDef> tim1 </th>
+            <td mat-cell *matCellDef="let element"> {{element.tim1.naziv}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="tim1_golovi">
+            <th mat-header-cell *matHeaderCellDef> tim1_golovi </th>
+            <td mat-cell *matCellDef="let element"> {{element.tim1_rezultat}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="tim2_golovi">
+            <th mat-header-cell *matHeaderCellDef> tim2_golovi </th>
+            <td mat-cell *matCellDef="let element"> {{element.tim2_rezultat}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="tim2">
+            <th mat-header-cell *matHeaderCellDef>Tim2</th>
+            <td mat-cell *matCellDef="let element"> {{element.tim2.naziv}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef='takmicenje'>
+            <th mat-header-cell *matHeaderCellDef> Takmicenje </th>
+            <td mat-cell *matCellDef="let element"> {{element.takmicenje.naziv}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="datum">
+            <th mat-header-cell *matHeaderCellDef> Datum</th>
+            <td mat-cell *matCellDef="let element"> {{element.datum}}</td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+    </table>
+</div>
