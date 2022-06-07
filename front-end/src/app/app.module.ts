@@ -8,19 +8,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { NavbarComponent } from './komponente/navbar/navbar.component';
 import { HomeComponent } from './komponente/home/home.component';
+import { TimoviComponent } from './komponente/timovi/timovi.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TimAddComponent } from './komponente/tim-add/tim-add.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    TimoviComponent,
+    TimAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

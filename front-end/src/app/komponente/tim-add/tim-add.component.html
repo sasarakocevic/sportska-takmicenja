@@ -1,0 +1,18 @@
+<div class="container">
+
+    <h1>Unesite novi tim</h1>
+
+    <form [formGroup]="timAddForm" class="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Naziv" formControlName="naziv">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Adresa" formControlName="adresa">
+        </div>
+        <div class="form-group">
+            <input type="slika" class="form-control" placeholder="Slika" formControlName="slika">
+        </div>
+
+        <button class="btn btn btn-success" style="margin: 10px;" type="submit">Submit</button>
+    </form>
+</div>
