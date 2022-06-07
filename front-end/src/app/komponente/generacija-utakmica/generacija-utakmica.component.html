@@ -1,0 +1,17 @@
+<div class="container" style="border: solid 1px ; justify-items: stretch;">
+    <div *ngFor="let par of grupe; let i =index "
+        style="display: inline-block; margin: 10px; border: solid 1px; padding: 5px;">
+        <h4>Par {{i +1}}</h4>
+        {{par['tim1'].naziv}}
+        <br>
+        VS
+        <br>
+        {{par['tim2'].naziv}}
+        <hr>
+    </div>
+    <div *ngIf="lonelyTeam">
+        {{lonelyTeam.naziv}}
+        <br>
+        <hr>
+    </div>
+</div>

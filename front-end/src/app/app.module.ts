@@ -14,6 +14,9 @@ import { TimAddComponent } from './komponente/tim-add/tim-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TakmicenjaComponent } from './komponente/takmicenja/takmicenja.component';
 import { TakmicenjeAddComponent } from './komponente/takmicenje-add/takmicenje-add.component';
+import { TakmicenjeItemComponent } from './komponente/takmicenje-item/takmicenje-item.component';
+import { GeneracijaUtakmicaComponent } from './komponente/generacija-utakmica/generacija-utakmica.component';
+import { DodavanjeTimovaUTakmicenjeComponent } from './komponente/dodavanje-timova-utakmicenje/dodavanje-timova-utakmicenje.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { TakmicenjeAddComponent } from './komponente/takmicenje-add/takmicenje-a
     TimoviComponent,
     TimAddComponent,
     TakmicenjaComponent,
-    TakmicenjeAddComponent
+    TakmicenjeAddComponent,
+    TakmicenjeItemComponent,
+    GeneracijaUtakmicaComponent,
+    DodavanjeTimovaUTakmicenjeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+<div class="container">
+    <form [formGroup]="dodavanjeTimovaForm" class="form" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <mat-form-field appearance="fill">
+                <mat-label>Dodajte timove</mat-label>
+                <mat-select formControlName="timovi" multiple>
+                    <mat-option *ngFor="let tim of timovi" [value]="tim.id">{{tim.naziv}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>

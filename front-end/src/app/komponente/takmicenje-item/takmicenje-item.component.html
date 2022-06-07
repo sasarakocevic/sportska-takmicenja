@@ -1,0 +1,16 @@
+<div class="container" style="text-align: center;" *ngIf="takmicenje">
+    <h3>{{takmicenje.naziv}}</h3>
+    <br>
+    <hr>
+    <button class="btn btn-primary" *ngIf="takmicenje.timovi!.length !== 0 || timAdded" (click)="generateGroups()"
+        [disabled]="groupsGenerated">Generate groups</button>
+    <br>
+    <div *ngIf="takmicenje.timovi!.length == 0">
+        <!-- <app-dodavanje-timova-utakmicenje (dodaniTimovi)="react($event)"></app-dodavanje-timova-utakmicenje> -->
+    </div>
+    <div *ngIf="groupsGenerated">
+        <app-generacija-utakmica [takmicenje]="takmicenje"></app-generacija-utakmica>
+
+    </div>
+
+</div>
