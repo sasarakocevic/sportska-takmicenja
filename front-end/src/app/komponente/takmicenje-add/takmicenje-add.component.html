@@ -1,0 +1,17 @@
+<div class="container">
+    <form [formGroup]="takmicenjeForm" class="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Naziv" formControlName="naziv">
+        </div>
+        <div class="form-group">
+            <input type="date" class="form-control" placeholder="Datum pocetka" formControlName="datumOd">
+        </div>
+        <div class="form-group">
+            <input type="date" class="form-control" placeholder="Datum zavrsetka" formControlName="datumDo">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Mjesto odrzavanja" formControlName="mjestoOdrzavanja">
+        </div>
+        <button class="btn btn-dark" style="margin: 10px;" type="submit">Submit</button>
+    </form>
+</div>

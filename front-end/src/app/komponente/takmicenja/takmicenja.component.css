@@ -1,0 +1,7 @@
+.container {
+    margin-top: 10px;
+}
+
+.mat-row:hover {
+    background: whitesmoke;
+}

@@ -12,6 +12,8 @@ import { TimoviComponent } from './komponente/timovi/timovi.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TimAddComponent } from './komponente/tim-add/tim-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TakmicenjaComponent } from './komponente/takmicenja/takmicenja.component';
+import { TakmicenjeAddComponent } from './komponente/takmicenje-add/takmicenje-add.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     HomeComponent,
     TimoviComponent,
-    TimAddComponent
+    TimAddComponent,
+    TakmicenjaComponent,
+    TakmicenjeAddComponent
   ],
   imports: [
     BrowserModule,
