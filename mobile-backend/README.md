@@ -1,6 +1,6 @@
 # Backend
 
-An backend in Nodejs with:
+Backend u Node js sa:
 - typescript
 - express
 - postgresql
